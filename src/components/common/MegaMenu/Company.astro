@@ -1,68 +1,67 @@
 ---
 import Icon from "@ui/icons/Icon.astro";
 import { companyMenu } from "@utils/megaMenu/company";
-const currentPath = Astro.url.pathname;
-let isDropdownOpen = false;
 
-function toggleDropdown(event: MouseEvent) {
-  event.preventDefault();
-  isDropdownOpen = !isDropdownOpen;
-}
+const sectionDescription = "마도학자 주식회사 소개";
+const currentPath = Astro.url.pathname;
 ---
 
 <div
   class="hs-dropdown [--adaptive:none] [--is-collapse:true] [--strategy:static] xl:[--is-collapse:false] xl:[--strategy:absolute] xl:[--trigger:hover]"
 >
-  
-  <button
-    id="mega-menu-company"
+  <!-- "회사소개" 클릭 시 /company/about 이동 -->
+  <a
+    id="mega-menu-downloads"
+    href="/company/about"
     class={`hs-dropdown-toggle flex w-full items-center rounded-lg p-2 font-medium text-slate-800 hover:bg-slate-100 focus:bg-slate-100 focus:outline-hidden text-nowrap ${
-      currentPath.startsWith("/company") ? "underline underline-offset-4" : ""
+    currentPath.startsWith("/downloads") ? "underline underline-offset-4" : ""
     }`}
+
     aria-haspopup="menu"
-    aria-expanded={isDropdownOpen ? "true" : "false"}
-    aria-label="Mega Menu Company"
-    onclick={toggleDropdown}  
+    aria-expanded="false"
+    aria-label="Mega Menu Downloads"
   >
     회사소개 <Icon name="arrowDownRight" />
-  </button>
+  </a>
 
   <div
-    class={`hs-dropdown-menu relative start-0 top-full z-10 mt-2 hidden min-w-60 max-w-(--breakpoint-md) opacity-0 transition-[opacity,margin] duration-150 before:absolute before:-top-5 before:start-0 before:h-5 before:w-full hs-dropdown-open:opacity-100 xl:start-[20%] xl:duration-300 ${
-      isDropdownOpen ? "block opacity-100" : ""
-    }`}
+    class="hs-dropdown-menu relative start-0 top-full z-10 mt-2 hidden min-w-60 max-w-(--breakpoint-md) opacity-0 transition-[opacity,margin] duration-150 before:absolute before:-top-5 before:start-0 before:h-5 before:w-full hs-dropdown-open:opacity-100 xl:start-[20%] xl:duration-300"
     role="menu"
     aria-orientation="vertical"
-    aria-labelledby="mega-menu-company"
+    aria-labelledby="mega-menu-downloads"
   >
     <div
       class="from-yellow-100 via-transparent to-white px-4 py-2 lg:mx-8 xl:mx-6 xl:rounded-lg xl:bg-white xl:bg-linear-to-t/oklch xl:px-16 xl:py-10 xl:shadow-lg xl:ring-1 xl:ring-yellow-950/5"
     >
-      <p class="text-sm text-slate-600">마도학자 주식회사 소개</p>
+      <p class="text-sm text-slate-600">
+        {sectionDescription}
+      </p>
       <hr class="mb-5 border border-yellow-300" />
 
       <div class="gap-4 py-1 md:grid md:grid-cols-1 md:p-2">
-        {companyMenu.map((section) => (
-          <div class="flex flex-col">
-            <p class="text-sm text-slate-600">{section.sectionTitle}</p>
+        {
+          companyMenu.map((section) => (
+            <div class="flex flex-col">
+              <p class="text-sm text-slate-600">{section.sectionTitle}</p>
 
-            {section.items.map((item) => (
-              <a
-                class="flex gap-x-4 rounded-lg p-3 hover:bg-slate-100 focus:bg-slate-100 focus:outline-hidden"
-                href={item.href}
-              >
-                <Icon name={item.icon} class="mt-1 size-5 shrink-0 text-slate-800" />
+              {section.items.map((item) => (
+                <a
+                  class="flex gap-x-4 rounded-lg p-3 hover:bg-slate-100 focus:bg-slate-100 focus:outline-hidden"
+                  href={item.href}
+                >
+                  <Icon name={item.icon} class="mt-1 size-5 shrink-0 text-slate-800" />
 
-                <div class="grow">
-                  <p class="text-sm font-medium text-slate-800">
-                    {item.title}
-                  </p>
+                  <div class="grow">
+                    <p class="text-sm font-medium text-slate-800">
+                      {item.title}
+                    </p>
                     <p class="text-sm text-slate-500">{item.description}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        ))}
+                  </div>
+                </a>
+              ))}
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
