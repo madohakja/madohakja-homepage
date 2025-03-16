@@ -28,8 +28,42 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        // Cloudflare Workers 환경에서 React 19의 잘못된 번들링 문제 해결
+        "react-dom/server": "react-dom/server.edge",
+      },
+    },
   },
   output: "static",
   adapter: cloudflare(),
   //adapter: vercel(),
 });
+
+
+
+
+// 로컬 테스트
+// export default defineConfig({
+//   // The `site` property specifies the base URL for your site.
+//   // Be sure to update this to your own domain (e.g., "https://yourdomain.com") before deploying.
+//   site: "https://www.madohakja.com",
+//   prefetch: true,
+//   trailingSlash: "never",
+//   experimental: {
+//     clientPrerender: true,
+//   },
+//   integrations: [
+//     react(),
+//     markdoc(),
+//     ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()]),
+//     //db(),
+//     svelte(),
+//   ],
+//   vite: {
+//     plugins: [tailwindcss()],
+//   },
+//   output: "static",
+//   adapter: cloudflare(),
+//   //adapter: vercel(),
+// });
