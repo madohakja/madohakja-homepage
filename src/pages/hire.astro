@@ -1,0 +1,91 @@
+---
+import BaseLayout from "@layout/BaseLayout.astro";
+import type { WithContext, Thing } from "schema-dts";
+
+// Data describing the "채용공고" section content
+const aboutData = {
+  title: "채용공고",
+  description:
+    "현재 채용 중인 공고가 없습니다. AI, 데이터 분석, 소프트웨어 개발 등 다양한 분야의 전문가를 위한 새로운 기회가 곧 업데이트될 예정입니다.",
+  statistics: [
+    {
+      label: "Industry Sectors Served",
+      value: "15+",
+    },
+    {
+      label: "Data Points Processed",
+      value: "Billions",
+    },
+    {
+      label: "Custom Reports Generated",
+      value: "500,000+",
+    },
+  ],
+};
+
+
+
+// SEO metadata for the page
+const seo = {
+  title: "마도학자 주식회사",
+  description: "마도학자 주식회사의 최신 채용공고를 확인하세요. 데이터 분석, 머신러닝, 소프트웨어 개발 등 다양한 분야에서 인재를 찾고 있습니다.",
+};
+
+// Schema.org metadata for SEO
+const schema: WithContext<Thing> = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "inLanguage": "ko-KR",
+  "@id": Astro.url.href,
+  "url": Astro.url.href,
+  "name": "마도학자 주식회사",
+  "description": "마도학자 주식회사의 최신 채용공고를 확인하세요. 데이터 분석, 머신러닝, 소프트웨어 개발 등 다양한 분야에서 인재를 찾고 있습니다.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": `${Astro.site}`,
+    "name": "마도학자 주식회사",
+    "description": "AI 인공지능 및 데이터 분석을 위한 최고의 소프트웨어 솔루션을 제공합니다."
+  }
+};
+---
+
+<BaseLayout seo={seo} schema={schema}>
+  <section class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8 bg-linear-to-br/oklch from-yellow-200 via-transparent to-white">
+    <div class="max-w-7xl">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h1
+          class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
+        >
+          {aboutData.title}
+        </h1>
+        <p
+          class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8"
+        >
+          {aboutData.description}
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </section>
+
+
+
+  <style>
+    .svgBlock::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url(/guilloche.svg);
+      background-repeat: repeat;
+      background-position: right top;
+      background-size: 20px, 20px;
+      opacity: 0.075;
+      background-clip: padding-box;
+      mask-image: linear-gradient(270deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    }
+  </style>
+</BaseLayout>

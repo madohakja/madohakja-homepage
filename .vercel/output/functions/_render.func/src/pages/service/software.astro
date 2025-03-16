@@ -1,0 +1,129 @@
+---
+import BaseLayout from "@layout/BaseLayout.astro";
+// import Icon from "@ui/icons/Icon.astro";
+
+// Hero
+const preTitle = "소프트웨어";
+const title = "인공지능 소프트웨어";
+const subTitle =
+  "기술과 마법이 만나는 소프트웨어";
+
+// Comparison Table Link
+const compareLink = "editions";
+const compareLinkAriaLabel =
+  "Explore the detailed feature comparison of the Essential and Advanced Editions of DataNova Core.";
+
+// Version options
+const essentialTier = {
+  title: "New Project",
+  description:
+    "개발 중 입니다..",
+  cta: {
+    text: "조금만 기다려주세요.",
+    link: "#",
+  },
+};
+
+const advancedTier = {
+  title: "로스카츠의 AI 머신러닝",
+  description:
+    "확률통계, 선형대수, 머신러닝, 딥러닝 등 인공지능 연구에 필요한 모든 지식을 담고 있는 곳입니다. 초보자부터 중고급자까지 모두 활용할 수 있는 사이트입니다.",
+  cta: {
+    text: "방문하기",
+    link: "https://losskatsu.github.io/",
+  },
+};
+
+
+---
+
+<BaseLayout>
+  <section class="mx-auto max-w-[85rem] px-4 pb-12 pt-40 sm:px-6 lg:px-8 bg-linear-to-br/oklch from-yellow-200 via-transparent to-white">
+    <div class="max-w-7xl">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <p class="text-base/7 font-medium text-slate-400">{preTitle}</p>
+        <h1
+          class="mt-1 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
+        >
+          {title}
+        </h1>
+        <p
+          class="mt-8 max-w-xl text-pretty text-lg font-medium text-slate-700 sm:text-xl/8"
+        >
+          {subTitle}
+        </p>
+        <a
+          class="group mt-5 inline-flex items-center justify-center gap-x-2 text-center font-medium text-slate-700 shadow-lg shadow-transparent transition duration-300 hover:text-slate-400 focus:outline-hidden"
+          href={compareLink}
+          target="_blank"
+          aria-label={compareLinkAriaLabel}
+        >
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 px-4 sm:mt-20 md:px-0 lg:max-w-4xl lg:grid-cols-2 lg:gap-y-0"
+  >
+    <div
+      class="rounded-3xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-slate-900/10 sm:p-10 lg:rounded-b-none lg:rounded-bl-3xl lg:rounded-tr-none"
+    >
+      <h3 class="text-3xl font-semibold text-slate-600">
+        {essentialTier.title}
+      </h3>
+
+      <p class="mt-8 text-base/6 text-slate-600 sm:mt-10">
+        {essentialTier.description}
+      </p>
+      <a
+        href={essentialTier.cta.link}
+        aria-describedby={essentialTier.title}
+        class="mt-8 block rounded-lg px-3.5 py-2.5 text-center text-sm font-semibold ring-1 ring-inset ring-yellow-700 transition duration-300 hover:bg-yellow-700/80 hover:text-white focus:bg-yellow-700 focus:text-white focus:outline-hidden sm:mt-10"
+        >{essentialTier.cta.text}</a
+      >
+    </div>
+
+    <div
+      class="relative flex flex-col justify-evenly rounded-3xl bg-yellow-400 p-8 shadow-2xl ring-1 ring-yellow-900/10 sm:p-10 lg:h-[120%]"
+    >
+      <h3 class="text-4xl/7 font-semibold text-yellow-100">
+        {advancedTier.title}
+      </h3>
+
+      <p class="mt-8 text-lg/6 text-yellow-50 sm:mt-10">
+        {advancedTier.description}
+      </p>
+
+      <a
+        href={advancedTier.cta.link}
+        aria-describedby={advancedTier.title}
+        class="mt-8 block rounded-lg bg-yellow-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs transition-colors duration-300 hover:bg-yellow-600/80 focus:bg-yellow-600/80 focus:outline-hidden sm:mt-10"
+        >{advancedTier.cta.text}</a
+      >
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+
+  <style>
+    .svgBlock::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url(/guilloche.svg);
+      background-repeat: repeat;
+      background-position: right top;
+      background-size: 20px, 20px;
+      opacity: 0.075;
+      background-clip: padding-box;
+      mask-image: linear-gradient(270deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    }
+  </style>
+</BaseLayout>

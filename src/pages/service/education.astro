@@ -1,0 +1,98 @@
+---
+import BaseLayout from "@layout/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+// 페이지 정보
+export const pageContent = {
+  pageTitle: "교육",
+  content:
+    "강의 만족도 97%. 머신러닝, 딥러닝, 확률통계, 선형대수, 도커, 쿠버네티스, 리눅스, 네트워크를 비롯한 IT 인프라 등 인공지능과 관련된 모든 교육을 진행합니다. 초급자, 중급자, 고급자, 전공자, 비전공자 등 다양한 수준별 맞춤형 교육을 약속드립니다.",
+};
+
+// 파트너 회사 로고 (import 방식)
+import logo1 from "@images/client/samsung.png";
+import logo2 from "@images/client/lg.png";
+import logo3 from "@images/client/sk.png";
+import logo4 from "@images/client/kb.png";
+import logo5 from "@images/client/kakao.png";
+import logo6 from "@images/client/nongsim.svg";
+import logo7 from "@images/client/upstage.png";
+import logo8 from "@images/client/yonsei.png";
+import logo9 from "@images/client/cau.png";
+import logo10 from "@images/client/cbnu.png";
+import logo11 from "@images/client/wonkwang.png";
+import logo12 from "@images/client/semyung.jpg";
+import logo13 from "@images/client/kyungnam.svg";
+import logo14 from "@images/client/bigleader.webp";
+import logo15 from "@images/client/kftc.svg";
+import logo16 from "@images/client/seocho.jpg";
+import logo17 from "@images/client/kosme.png";
+import logo18 from "@images/client/seoulhealth.jpeg";
+import logo19 from "@images/client/cbist.jpg";
+import logo20 from "@images/client/hanbit.png";
+import logo21 from "@images/client/bjpublic.webp";
+import logo22 from "@images/client/insight.png";
+
+// 로고 배열
+const partnerLogos = [
+  { image: logo1 },
+  { image: logo2 },
+  { image: logo3 },
+  { image: logo4 },
+  { image: logo5 },
+  { image: logo6 },
+  { image: logo7 },
+  { image: logo8 },
+  { image: logo9 },
+  { image: logo10 },
+  { image: logo11 },
+  { image: logo12 },
+  { image: logo13 },
+  { image: logo14 },
+  { image: logo15 },
+  { image: logo16 },
+  { image: logo17 },
+  { image: logo18 },
+  { image: logo19 },
+  { image: logo20 },
+  { image: logo21 },
+  { image: logo22 },
+];
+---
+
+<BaseLayout>
+  <section class="bg-linear-to-br/oklch from-yellow-200 via-transparent to-white">
+    <div class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
+      <div class="max-w-7xl">
+        <div class="mx-auto max-w-3xl lg:mx-0">
+          <h1 class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
+            {pageContent.pageTitle}
+          </h1>
+          <p class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8">
+            {pageContent.content}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Partner 섹션 -->
+  <section class="mx-auto max-w-[85rem] px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="text-center text-2xl font-semibold text-slate-800 sm:text-3xl">
+      Our Partners
+    </h2>
+
+    <!-- 로고 리스트 -->
+    <div class="mt-10 grid grid-cols-3 gap-6 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8">
+      {partnerLogos.map((logo, index) => (
+        <div class="flex items-center justify-center p-4 w-full max-w-44" data-key={index}>
+          <Image
+            src={logo.image}
+            class="w-full max-w-40 h-auto object-contain"
+            alt="Company Logo"
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

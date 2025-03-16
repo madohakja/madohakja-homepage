@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import image_1 from "@images/toolbar.webp";
 import image_2 from "@images/graph.webp";
 import image_3 from "@images/dashboard.webp";
+import image_7 from "@images/logo_yellow_big.png";
 
 // Content for the section title and subtitle
 const title = `<span class="text-teal-700">Data</span><span class="font-normal text-slate-400">Nova</span>'s Powerful Analytics Suite`;
@@ -11,6 +12,15 @@ const subTitle = `Discover how DataNova transforms your Excel workspace into a c
 // Features list for displaying the key highlights
 
 const features = [
+  {
+    title: "", // Feature title
+    description:
+      "", // Feature description
+    image: image_7, // Associated image
+    class:
+      "content-center border-b border-dashed border-slate-400 py-5 sm:col-span-2 sm:p-5", // Custom CSS classes for layout and styling
+    alignment: "mx-auto mt-10 sm:w-[25%]", // Alignment and styling for the image
+  },
   {
     title: "Native Excel integration", // Feature title
     description:

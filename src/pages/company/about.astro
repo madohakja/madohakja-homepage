@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@layout/BaseLayout.astro";
+
+export const pageContent = {
+  pageTitle: "마도학자 주식회사",
+  content: "마도학자 주식회사는 인공지능 소프트웨어 개발, AI 교육, 도서 집필, 컨설팅 서비스 등을 통해 기술과 지식을 연결하는 기업입니다. 우리는 마법과 같은 AI 기술을 연구하고 개발하며, 기업과 개인이 미래를 주도할 수 있도록 돕는 것이 목표입니다. 이를 위해 인공지능을 단순한 기술이 아닌 실질적인 가치를 창출하는 도구로 만듭니다. AI 교육을 통해 지식을 널리 전파하고 누구나 인공지능을 이해하고 활용할 수 있도록 만들며, 책은 단순한 정보 전달이 아니라 AI를 이해하고 깊이 탐구할 수 있는 마법서 역할을 합니다. 뿐만 아니라 맞춤형 컨설팅 서비스를 통해 기업이  AI를 효과적으로 도입하고, IT인프라와 데이터 전략을 최적화할 수 있도록 지원합니다. 기술과 지식, 전략이 하나로 연결될 때 진정한 혁신이 이루어진다고 믿습니다. 마도학자 주식회사는 AI를 통해 새로운 가능성을 탐구하고, 세상에 마법 같은 변화를 만들어갑니다. 마도학자 주식회사와 함께 인공지능이 만들어갈 새로운 시대를 탐험해보세요. 여러분과 함께 성장할 수 있기를 기대합니다.",
+};
+---
+
+<BaseLayout>
+  <section class="bg-linear-to-br/oklch from-yellow-200 via-transparent to-white">
+    <div class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
+      <div class="max-w-7xl">
+        <div class="mx-auto max-w-3xl lg:mx-0">
+          <h1
+            class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
+          >
+            {pageContent.pageTitle}
+          </h1>
+          <p
+            class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8"
+          >
+            {pageContent.content}
+            <br>
+            <br>
+            대표이사 장 철 원
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+  >
+  </section>
+</BaseLayout>

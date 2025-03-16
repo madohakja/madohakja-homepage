@@ -15,7 +15,7 @@ import { db, Feedback, eq, sql } from "astro:db";
  * @returns {Promise<Response>} A Response object containing the feedback data or error message.
  */
 export const POST: APIRoute = async ({ request }) => {
-  try {
+    try {
     const data = await request.json();
     const { slug, type } = data;
 

@@ -20,14 +20,19 @@ const reference = defineCollection({
   }),
 });
 
+
 const spreadsheets = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/data/spreadsheets" }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    author: z.string(),
+    publish: z.string(),
+    year: z.string(),
     url: z.string(),
   }),
 });
+
+
 
 const whitepapers = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/data/whitepapers" }),

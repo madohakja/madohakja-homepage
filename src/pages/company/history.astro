@@ -1,0 +1,135 @@
+---
+import BaseLayout from "@layout/BaseLayout.astro";
+
+// Hero
+const preTitle = "Story";
+const title = "스토리";
+const subTitle =
+  "마도학자 주식회사가 걸어온 길";
+
+// Comparison Table Link
+const compareLink = "editions";
+const compareLinkAriaLabel =
+  "Explore the detailed feature comparison of the Essential and Advanced Editions of DataNova Core.";
+
+// Large Info Section (Only Older Releases kept)
+const largeInfoSection = {
+  olderReleases: {
+    title: "마도학자 주식회사",
+    content: "",
+    versions: [
+      {
+        version: "2025.01 - 마도학자 주식회사 법인 설립",
+        href: "#",
+      },
+      {
+        version: "2024.12 - 세종학술도서 선정 <한권으로 배우는 도커&쿠버네티스>",
+        href: "#",
+      },
+      {
+        version: "2023.05 - Yes24 이달의 개발자 선정",
+        href: "#",
+      },
+      {
+        version: "2023.03 - <몬테카를로 시뮬레이션으로 배우는 확률통계 with 파이썬> 출간",
+        href: "#",
+      },
+      {
+        version: "2022.01 - <웹 크롤링 & 데이터 분석 with 파이썬> 출간",
+        href: "#",
+      },
+      {
+        version: "2021.12 - <알고리즘 구현으로 배우는 선형대수 with 파이썬> 출간",
+        href: "#",
+      },
+      {
+        version: "2021.07 - 나노쿠키 개인사업자 설립",
+        href: "#",
+      },
+      {
+        version: "2021.01 - <선형대수와 통계학으로 배우는 머신러닝 with 파이썬> 출간",
+        href: "#",
+      },
+
+
+      
+    ],
+  },
+};
+---
+
+<BaseLayout>
+  <section class="mx-auto max-w-[85rem] px-4 pb-1 pt-40 sm:px-6 lg:px-8 bg-linear-to-br/oklch from-yellow-200 via-transparent to-white">
+    <div class="max-w-7xl">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <p class="text-base/7 font-medium text-slate-400">{preTitle}</p>
+        <h1
+          class="mt-1 text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
+        >
+          {title}
+        </h1>
+        <p
+          class="mt-8 max-w-xl text-pretty text-lg font-medium text-slate-700 sm:text-xl/8"
+        >
+          {subTitle}
+        </p>
+        <a
+          class="group mt-5 inline-flex items-center justify-center gap-x-2 text-center font-medium text-slate-700 shadow-lg shadow-transparent transition duration-300 hover:text-slate-400 focus:outline-hidden"
+          href={compareLink}
+          target="_blank"
+          aria-label={compareLinkAriaLabel}
+        >
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Older Releases Section (Only this remains) -->
+  <section
+    class="mx-auto max-w-[85rem] px-4 pb-10 sm:px-6 md:py-14 lg:px-8 lg:py-20"
+  >
+    <div class="rounded-3xl bg-yellow-100 px-5 py-5 shadow-xl">
+      <div class="py-5 sm:p-5">
+        <h3
+          class="text-balance text-2xl font-bold tracking-tight text-slate-800"
+        >
+          {largeInfoSection.olderReleases.title}
+        </h3>
+
+        <p class="mt-6 text-pretty text-lg/8 text-slate-700">
+          {largeInfoSection.olderReleases.content}
+        </p>
+
+        <ul class="mt-6 list-inside list-none px-5 text-slate-700">
+          {
+            largeInfoSection.olderReleases.versions.map((release, index) => (
+              <li class={`${index % 1 === 1 ? "mb-6" : ""}`}>
+                <a
+                  href={release.href}
+                  class="transition duration-300 hover:text-slate-400 hover:underline"
+                >
+                  {release.version}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .svgBlock::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url(/guilloche.svg);
+      background-repeat: repeat;
+      background-position: right top;
+      background-size: 20px, 20px;
+      opacity: 0.075;
+      background-clip: padding-box;
+      mask-image: linear-gradient(270deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    }
+  </style>
+</BaseLayout>

@@ -21,16 +21,16 @@ const socialImage = `${Astro.site}social.png`; // Path to the default social sha
 const defaultSchema: WithContext<Thing> = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  inLanguage: "en-US",
+  inLanguage: "ko-KR",
   "@id": Astro.url.href,
   url: Astro.url.href,
-  name: "DataNova",
+  name: "마도학자 주식회사",
   description:
     "Unlock powerful data insights with DataNova's advanced analytics suite for Excel. Visualize, analyze, and make data-driven decisions in minutes with seamless Excel integration, AI-powered analysis, and predictive forecasting models.",
   isPartOf: {
     "@type": "WebSite",
     url: `${Astro.site}`,
-    name: "DataNova",
+    name: "마도학자 주식회사",
     description:
       "DataNova Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required.",
   },
@@ -42,7 +42,7 @@ const defaultSchema: WithContext<Thing> = {
     {/* SEO Meta Tags */}
     <SEO
       charset="utf-8"
-      title={seo?.title ?? "DataNova"}
+      title={seo?.title ?? "마도학자 주식회사"}
       description={seo?.description ??
         "Unlock powerful data insights with DataNova's advanced analytics suite for Excel. Visualize, analyze, and make data-driven decisions in minutes with seamless Excel integration, AI-powered analysis, and predictive forecasting models."}
       openGraph={{

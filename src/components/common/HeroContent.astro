@@ -1,32 +1,51 @@
 ---
 import Button from "@ui/Button.astro";
+import { Image } from "astro:assets";
+import image_7 from "@images/logo_yellow_big.png";
 
-const title = "Turn Excel® into Your Data Intelligence Powerhouse";
+const title = "Find Core, Make More";
 const subTitle =
-  "Get instant insights from your spreadsheets with advanced analytics and stunning visualizations. No coding required. Make confident decisions backed by data in minutes, not days.";
-const secondaryCTA = { text: "Start Free Trial", href: "https://github.com/mearashadowfax/DataNova" };
-const primaryCTA = { text: "View Pricing", href: "/downloads/license-options" };
+  ""; 
+const secondaryCTA = { text: "서비스 안내", href: "/service/education" };
+const primaryCTA = { text: "연락처 안내", href: "/contact" }; 
+const logo = {
+    image: image_7, // Associated image
+    class:
+      "content-center py-1 sm:col-span-2 sm:p-5", // Custom CSS classes for layout and styling
+    alignment: "mx-auto mt-0 sm:w-[40%]", // Alignment and styling for the image
+};
 ---
 
 {/* Hero Content */}
 <div class="mx-auto max-w-4xl select-none text-left sm:text-center">
+  {/*로고 삽입*/}
+  <Image src={logo.image} class={`${logo.class} ${logo.alignment}`} alt="Company Logo" />
+
   <h1
-    class="block text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl"
+    class="block text-balance text-3xl text-[#E6E6E6] sm:text-4xl md:text-5xl lg:text-6xl"
   >
     {title}
   </h1>
 </div>
 
 <div class="mx-auto max-w-3xl text-left sm:text-center">
-  <p class="text-pretty text-lg text-slate-700">
+  <p class="text-pretty text-lg text-[#E6E6E6]">
     {subTitle}
   </p>
 </div>
 
 {/* CTA Buttons */}
+
 <div class="flex flex-col justify-center gap-5 sm:flex-row">
   <Button href={secondaryCTA.href} variant="secondary" target="_blank"
     >{secondaryCTA.text}</Button
   >
   <Button href={primaryCTA.href} variant="primary">{primaryCTA.text}</Button>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

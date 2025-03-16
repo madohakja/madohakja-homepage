@@ -192,7 +192,7 @@ The navigation bar links are stored in the `utils/navigation.ts` file. To add or
 
 ```typescript
 export const navigationLinks = [
-  { href: "/about", label: "About" },
+  { href: "/hire", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 

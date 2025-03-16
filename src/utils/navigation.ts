@@ -1,4 +1,4 @@
 export const navigationLinks = [
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/hire", label: "채용공고" },
+  { href: "/contact", label: "문의" },
 ];

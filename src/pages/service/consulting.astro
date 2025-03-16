@@ -1,0 +1,97 @@
+---
+import BaseLayout from "@layout/BaseLayout.astro";
+import Icon from "@ui/icons/Icon.astro";
+
+export const pageContent = {
+  pageTitle: "컨설팅",
+  content: "인공지능 문제 해결 전략",
+};
+
+// Content for the section title and subtitle
+const title =
+  'Why <span class="text-yellow-500">마도학자 </span><span class="font-normal text-slate-400">주식회사</span>?';
+const subTitle =
+  "마도학자 주식회사는 단순한 기술 제공을 넘어, 비즈니스에 실질적인 변화를 만드는 맞춤형 AI, 데이터 전략, IT 인프라를 제시합니다. 마도학자 주식회사가 설계하는 솔루션은 이론이 아닌 실제 적용과 성과 창출을 목표로 하며, 기업의 환경과 미래까지 고려한 최적의 방향을 제공합니다. 변화하는 기술 흐름속에서, 마법과 같은 인공지능 혁신을 통해 당신의 비즈니스를 한 단계 도약시키겠습니다.";
+
+const features = [
+  {
+    borderClasses: "md:border-l md:border-r",
+    gradientClasses: "bg-linear-to-l/oklch from-yellow-200 to-transparent",
+    icon: "cursorRays",
+    heading: "인공지능 AI",
+    description:
+      "인공지능은 모든 기업에 동일한 방식으로 적용되지 않습니다. 마도학자 주식회사는 고객의 비즈니스 환경과 목표에 맞춘 맞춤형 AI 솔루션을 설계하고, 이를 효과적으로 활용할 수 있는 전략을 제공합니다. 단순한 기술 도입을 넘어, AI가 실질적인 가치와 성과를 창출할 수 있도록 최적의 방향을 제시합니다.",
+  },
+  {
+    borderClasses: "border-b border-t md:border-b-0",
+    gridClasses: "md:col-start-2 md:col-end-3",
+    gradientClasses: "bg-linear-to-t/oklch from-yellow-200 to-transparent",
+    icon: "puzzle",
+    heading: "데이터 전략",
+    description:
+      "인공지능의 성능은 데이터를 어떻게 수집하고 활용하느냐에 따라 결정됩니다. 마도학자 주식회사는 데이터 수집, 정제, 분석, 활용까지 전 과정을 아우르는 전략을 수립하여, 기업이 데이터에서 실질적인 가치를 창출 할 수 있도록 돕습니다. 단순한 데이터 관리가 아닌, 의사결정을 강화하고 미래를 예측하는 데이터 전략을 제공합니다.",
+  },
+  {
+    borderClasses: "md:border-l md:border-r md:border-t",
+    gridClasses: "md:col-end-4",
+    gradientClasses: "bg-linear-to-tl/oklch from-yellow-200 to-transparent",
+    icon: "cog",
+    heading: "IT 인프라",
+    description:
+      "강력한 인공지능도 제대로된 IT 인프라 없이는 제 기능을 발휘할 수 없습니다. 마도학자 주식회사는 안정적이고 확장 가능한 기술 아키텍처를 설계하여, 기업이 변화하는 환경에서도 유연하고 효율적으로 운영될 수 있도록 돕습니다. 인공지능, 데이터, 클라우드 등 핵심 기술이 원활하게 조화를 이루도록 최적의 IT 인프라를 구축합니다.",
+  },
+];
+---
+
+<BaseLayout>
+  <section class="bg-linear-to-br/oklch from-yellow-200 via-transparent to-white">
+    <div class="mx-auto max-w-[85rem] px-4 pb-12 pt-48 sm:px-6 lg:px-8">
+      <div class="max-w-7xl">
+        <div class="mx-auto max-w-3xl lg:mx-0">
+          <h1 class="text-balance text-4xl text-slate-800 sm:text-5xl md:text-6xl lg:text-7xl">
+            {pageContent.pageTitle}
+          </h1>
+          <p class="mt-8 text-pretty text-lg font-medium text-slate-700 sm:text-xl/8">
+            {pageContent.content}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 새로운 섹션 추가 -->
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 md:py-14 lg:px-8 lg:py-20">
+    <div class="grid grid-flow-row-dense grid-cols-1 md:grid-cols-3 md:grid-rows-2">
+      {/* Section container for the title and subtitle */}
+      <div class="mx-auto max-w-lg pb-5 text-center md:col-span-2 lg:mx-0 lg:flex-auto lg:text-left">
+        <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-800 md:text-3xl md:leading-tight">
+          <Fragment set:html={title} />
+        </h2>
+        <p class="mt-6 text-start text-lg/8 text-pretty text-slate-700 sm:text-center md:text-start">
+          {subTitle}
+        </p>
+      </div>
+
+      {/* Feature Cards */}
+      {
+        features &&
+        features.map((feature) => (
+          <div class={`group relative mx-auto flex flex-col border-dashed border-slate-400 py-10 ${feature.borderClasses} ${feature.gridClasses}`}>
+            <div class={`group pointer-events-none absolute inset-0 h-full w-full ${feature.gradientClasses} opacity-0 transition duration-300 group-hover:opacity-100`} />
+            <div class="relative z-10 mb-4 px-10">
+              <Icon name={feature.icon} />
+            </div>
+            <div class="relative z-10 mb-2 px-10 text-lg font-semibold">
+              <span class="inline-block text-balance text-slate-800 transition duration-300 group-hover:translate-x-2">
+                {feature.heading}
+              </span>
+            </div>
+            <p class="z-10 max-w-sm px-4 text-sm text-pretty text-slate-700 sm:max-w-lg md:mx-auto">
+              {feature.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
