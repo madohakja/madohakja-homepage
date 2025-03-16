@@ -4,7 +4,7 @@ import { serviceMenu } from "@utils/megaMenu/service";
 const currentPath = Astro.url.pathname;
 let isDropdownOpen = false;
 
-function toggleDropdown(event) {
+function toggleDropdown(event: MouseEvent) {
   event.preventDefault(); // 기본 이동 방지
   isDropdownOpen = !isDropdownOpen;
 }
@@ -13,7 +13,7 @@ function toggleDropdown(event) {
 <div
   class="hs-dropdown [--adaptive:none] [--is-collapse:true] [--strategy:static] xl:[--is-collapse:false] xl:[--strategy:absolute] xl:[--trigger:hover]"
 >
-  <!-- "서비스" 클릭 시 소메뉴 토글 (이동 제거) -->
+  
   <button
     id="mega-menu-service"
     class={`hs-dropdown-toggle flex w-full items-center rounded-lg p-2 font-medium text-slate-800 hover:bg-slate-100 focus:bg-slate-100 focus:outline-hidden ${
@@ -22,7 +22,7 @@ function toggleDropdown(event) {
     aria-haspopup="menu"
     aria-expanded={isDropdownOpen ? "true" : "false"}
     aria-label="Mega Menu"
-    on:click={toggleDropdown} <!-- 클릭하면 소메뉴 토글 -->
+    onclick={toggleDropdown}  
   >
     서비스 <Icon name="arrowDownRight" />
   </button>
