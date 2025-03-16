@@ -15,7 +15,7 @@ interface Props {
 
 // Extract `seo` and `schema` from properties or define defaults
 const { seo, schema } = Astro.props;
-const socialImage = `${Astro.site}social.png`; // Path to the default social sharing image
+const socialImage = `${Astro.site}social2.png`; // Path to the default social sharing image
 
 // Define default JSON-LD Schema.org data if no schema is passed
 const defaultSchema: WithContext<Thing> = {
@@ -62,7 +62,7 @@ const defaultSchema: WithContext<Thing> = {
         description:
           "마도학자 주식회사는 인공지능 소프트웨어 개발, AI 교육, 도서 집필, 컨설팅 서비스 등을 통해 기술과 지식을 연결하는 기업입니다.",
         image: socialImage,
-        imageAlt: "DataNova Logo.",
+        imageAlt: "마도학자 주식회사 로고",
       }}
       extend={{
         link: [
