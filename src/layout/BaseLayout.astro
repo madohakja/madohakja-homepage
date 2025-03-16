@@ -77,13 +77,12 @@ const defaultSchema: WithContext<Thing> = {
       }}
     />
 
-    <!-- Google tag (gtag.js) -->
+    {/* Google Analytics (GA4) */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WK00D3CDN6"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ window.dataLayer.push(arguments); }
       gtag('js', new Date());
-
       gtag('config', 'G-WK00D3CDN6');
     </script>
 
