@@ -860,27 +860,27 @@ const $$BaseLayout = createComponent(($$result, $$props, $$slots) => {
     "@id": Astro2.url.href,
     url: Astro2.url.href,
     name: "\uB9C8\uB3C4\uD559\uC790 \uC8FC\uC2DD\uD68C\uC0AC",
-    description: "Unlock powerful data insights with DataNova's advanced analytics suite for Excel. Visualize, analyze, and make data-driven decisions in minutes with seamless Excel integration, AI-powered analysis, and predictive forecasting models.",
+    description: "마도학자 주식회사는 인공지능 소프트웨어 개발, AI 교육, 도서 집필, 컨설팅 서비스 등을 통해 기술과 지식을 연결하는 기업입니다. 마법과 같은 AI 기술을 연구하고 개발하며, 기업과 개인이 미래를 주도할 수 있도록 돕는 것이 목표입니다. 마도학자 주식회사와 함께 인공지능이 만들어갈 새로운 시대를 탐험해보세요. 여러분과 함께 성장할 수 있기를 기대합니다.",
     isPartOf: {
       "@type": "WebSite",
       url: `${Astro2.site}`,
       name: "\uB9C8\uB3C4\uD559\uC790 \uC8FC\uC2DD\uD68C\uC0AC",
-      description: "DataNova Analytics Inc. provides advanced analytics for Excel to help businesses unlock actionable insights quickly with no coding required."
+      description: "마도학자 주식회사는 인공지능 소프트웨어 개발, AI 교육, 도서 집필, 컨설팅 서비스 등을 통해 기술과 지식을 연결하는 기업입니다."
     }
   };
-  return renderTemplate`<html lang="en" class="scroll-pt-32"> <head>${renderComponent($$result, "SEO", $$SEO, { "charset": "utf-8", "title": seo?.title ?? "\uB9C8\uB3C4\uD559\uC790 \uC8FC\uC2DD\uD68C\uC0AC", "description": seo?.description ?? "Unlock powerful data insights with DataNova's advanced analytics suite for Excel. Visualize, analyze, and make data-driven decisions in minutes with seamless Excel integration, AI-powered analysis, and predictive forecasting models.", "openGraph": {
+  return renderTemplate`<html lang="en" class="scroll-pt-32"> <head>${renderComponent($$result, "SEO", $$SEO, { "charset": "utf-8", "title": seo?.title ?? "\uB9C8\uB3C4\uD559\uC790 \uC8FC\uC2DD\uD68C\uC0AC", "description": seo?.description ?? "마도학자 주식회사는 인공지능 소프트웨어 개발, AI 교육, 도서 집필, 컨설팅 서비스 등을 통해 기술과 지식을 연결하는 기업입니다. 마법과 같은 AI 기술을 연구하고 개발하며, 기업과 개인이 미래를 주도할 수 있도록 돕는 것이 목표입니다. 마도학자 주식회사와 함께 인공지능이 만들어갈 새로운 시대를 탐험해보세요. 여러분과 함께 성장할 수 있기를 기대합니다.", "openGraph": {
     basic: {
-      title: "DataNova - Unlock Insights from Your Excel Data",
+      title: "마도학자 주식회사",
       type: "website",
       image: socialImage
     },
     optional: {
-      description: "Transform your Excel workspace with DataNova's powerful analytics suite. Get insights, predictive models, and visualizations in minutes with no coding required."
+      description: "마도학자 주식회사는 인공지능 소프트웨어 개발, AI 교육, 도서 집필, 컨설팅 서비스 등을 통해 기술과 지식을 연결하는 기업입니다."
     }
   }, "twitter": {
     card: "summary_large_image",
-    title: "DataNova - Unlock Insights from Your Excel Data",
-    description: "Transform your Excel workspace with DataNova's powerful analytics suite. Visualize and analyze data quickly with no coding required.",
+    title: "마도학자 주식회사",
+    description: "마도학자 주식회사는 인공지능 소프트웨어 개발, AI 교육, 도서 집필, 컨설팅 서비스 등을 통해 기술과 지식을 연결하는 기업입니다.",
     image: socialImage,
     imageAlt: "DataNova Logo."
   }, "extend": {
