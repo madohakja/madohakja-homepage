@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from "@keystatic/astro";
-import db from "@astrojs/db";
+//import db from "@astrojs/db";
 import svelte from "@astrojs/svelte";
 import cloudflare from "@astrojs/cloudflare";
 
@@ -23,7 +23,7 @@ export default defineConfig({
     react(),
     markdoc(),
     ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()]),
-    db(),
+    //db(),
     svelte(),
   ],
   vite: {
