@@ -44,7 +44,7 @@ export default defineConfig({
 
 
 
-// // 로컬 테스트
+// 로컬 테스트
 // export default defineConfig({
 //   // The `site` property specifies the base URL for your site.
 //   // Be sure to update this to your own domain (e.g., "https://yourdomain.com") before deploying.
