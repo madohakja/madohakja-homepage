@@ -1,11 +1,39 @@
 ---
 import BaseLayout from "@layout/BaseLayout.astro";
+import { Image } from "astro:assets";
 import Icon from "@ui/icons/Icon.astro";
 
 export const pageContent = {
   pageTitle: "컨설팅",
   content: "인공지능 문제 해결 전략",
 };
+
+// 파트너 회사 로고 (import 방식)
+
+import logo1 from "@images/client/seoulhealth.jpeg";
+import logo2 from "@images/client/cbist.jpg";
+import logo3 from "@images/client/nipa.svg";
+import logo4 from "@images/client/keis.svg";
+import logo5 from "@images/client/koreawater.svg";
+import logo6 from "@images/client/kwcws.svg";
+import logo7 from "@images/client/hiras.svg";
+import logo8 from "@images/client/innobiz.jpg";
+import logo9 from "@images/client/donghae.webp";
+import logo10 from "@images/client/makerworld.jpg";
+
+// 로고 배열
+const partnerLogos = [
+  { image: logo1 },
+  { image: logo2 },
+  { image: logo3 },
+  { image: logo4 },
+  { image: logo5 },
+  { image: logo6 },
+  { image: logo7 },
+  { image: logo8 },
+  { image: logo9 },
+  { image: logo10 },
+];
 
 // Content for the section title and subtitle
 const title =
@@ -94,4 +122,25 @@ const features = [
       }
     </div>
   </section>
+
+  <!-- Our Partner 섹션 -->
+  <section class="mx-auto max-w-[85rem] px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="text-center text-2xl font-semibold text-slate-800 sm:text-3xl">
+      Our Partners
+    </h2>
+
+    <!-- 로고 리스트 -->
+    <div class="mt-10 grid grid-cols-3 gap-6 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8">
+      {partnerLogos.map((logo, index) => (
+        <div class="flex items-center justify-center p-4 w-full max-w-44" data-key={index}>
+          <Image
+            src={logo.image}
+            class="w-full max-w-40 h-auto object-contain"
+            alt="Company Logo"
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
 </BaseLayout>

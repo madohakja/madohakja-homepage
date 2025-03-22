@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layout/BaseLayout.astro";
 import { Image } from "astro:assets";
+import Icon from "@ui/icons/Icon.astro";
 
 // 페이지 정보
 export const pageContent = {
@@ -15,36 +16,27 @@ import logo2 from "@images/client/lg.png";
 import logo3 from "@images/client/sk.png";
 import logo4 from "@images/client/kb.png";
 import logo5 from "@images/client/kakao.png";
-import logo6 from "@images/client/nongsim.svg";
-import logo7 from "@images/client/upstage.png";
-import logo8 from "@images/client/yonsei.png";
-import logo9 from "@images/client/cau.png";
-import logo10 from "@images/client/cbnu.png";
-import logo11 from "@images/client/wonkwang.png";
-import logo12 from "@images/client/semyung.jpg";
-import logo13 from "@images/client/kyungnam.svg";
-import logo14 from "@images/client/bigleader.webp";
-import logo15 from "@images/client/kftc.svg";
-import logo16 from "@images/client/seocho.jpg";
-import logo17 from "@images/client/kosme.png";
-import logo18 from "@images/client/seoulhealth.jpeg";
-import logo19 from "@images/client/cbist.jpg";
-import logo20 from "@images/client/hanbit.png";
-import logo21 from "@images/client/bjpublic.webp";
-import logo22 from "@images/client/insight.png";
-import logo23 from "@images/client/day1company_logo.png";
-import logo24 from "@images/client/learningspoons.png";
-import logo25 from "@images/client/teamsparta.png";
-import logo26 from "@images/client/kyowon.png";
-import logo27 from "@images/client/makerworld.jpg";
-import logo28 from "@images/client/tta.svg";
-import logo29 from "@images/client/nipa.svg";
-import logo30 from "@images/client/keis.svg";
-import logo31 from "@images/client/koreawater.svg";
-import logo32 from "@images/client/kwcws.svg";
-import logo33 from "@images/client/hiras.svg";
-import logo34 from "@images/client/donghae.webp";
-import logo35 from "@images/client/innobiz.jpg";
+import logo6 from "@images/client/kyowon.png";
+import logo7 from "@images/client/nongsim.svg";
+import logo8 from "@images/client/upstage.png";
+import logo9 from "@images/client/yonsei.png";
+import logo10 from "@images/client/cau.png";
+import logo11 from "@images/client/cbnu.png";
+import logo12 from "@images/client/wonkwang.png";
+import logo13 from "@images/client/semyung.jpg";
+import logo14 from "@images/client/kyungnam.svg";
+import logo15 from "@images/client/day1company_logo.png";
+import logo16 from "@images/client/learningspoons.png";
+import logo17 from "@images/client/teamsparta.png";
+import logo18 from "@images/client/bigleader.webp";
+import logo19 from "@images/client/kftc.svg";
+import logo20 from "@images/client/seocho.jpg";
+import logo21 from "@images/client/kosme.png";
+import logo22 from "@images/client/hanbit.png";
+import logo23 from "@images/client/bjpublic.webp";
+import logo24 from "@images/client/insight.png";
+import logo25 from "@images/client/tta.svg";
+
 
 
 // 로고 배열
@@ -74,17 +66,43 @@ const partnerLogos = [
   { image: logo23 },
   { image: logo24 },
   { image: logo25 },
-  { image: logo26 },
-  { image: logo27 },
-  { image: logo28 },
-  { image: logo29 },
-  { image: logo30 },
-  { image: logo31 },
-  { image: logo32 },
-  { image: logo33 },
-  { image: logo34 },
-  { image: logo35 },
 ];
+
+const educationFeatures = [
+  {
+    icon: "cursorRays",
+    heading: "인공지능 & 머신러닝",
+    description:
+      "알고 사용하는 인공지능. 머신러닝, 딥러닝, 추천 시스템, 생성형 AI까지 최신  AI 기술을 실무에 적용할 수 있도록 학습합니다. 현업에서 활용 가능한 모델링과 튜닝, 문제 해결 역량을 실제 프로젝트를 통해 체득합니다. 단순히 파이토치, 트랜스포머, LLM 라이브러리를 사용하는데 그치지 않고 선형대수, 확률 통계를 기반으로 '왜 이 기술을 사용하는가?', '어떻게 동작하는가?'에 대한 본질적 이해를 추구합니다. 실제로 써먹을 수 있는 인공지능, '알고 쓰는' 인공지능 개발자로 성장할 수 있도록 돕는 것이 목표입니다.",
+    gradientClasses: "bg-linear-to-l/oklch from-yellow-200 to-transparent",
+    borderClasses: "md:border-r md:border-b",
+  },
+  {
+    icon: "cog",
+    heading: "클라우드 & 데이터 엔지니어링",
+    description:
+      "AI가 안정적으로 작동할 수 있는 탄탄한 시스템 설계. 리눅스 운영체제를 기반으로 도커, 쿠버네티스, 클라우드 인프라, DevOps, MLOps 등 IT 인프라를 구성하는 핵심 기술들을 실무 중심으로 학습합니다. 이를 위해 단순히 플랫폼을 '쓸 줄 아는 것'이 아닌 컴퓨터 사이언스에 대한 깊은 이해를 바탕으로 복잡한 시스템을 스스로 설계하고 구축할 수 있는 역량을 키우는 것이 핵심입니다. 인공지능을 실제 서비스로 이어지게 하기 위한 인프라 구축까지 아우르는 전체 흐름을 배울 수 있습니다.",
+    gradientClasses: "bg-linear-to-r/oklch from-yellow-200 to-transparent",
+    borderClasses: "md:border-l md:border-b",
+  },
+  {
+    icon: "puzzle",
+    heading: "데이터 사이언스 & 통계",
+    description:
+      "깊이 있는 데이터 분석. 단순히 툴을 배우고 끝내는 수업이 아닙니다. 확률 통계와 선형대수라는 탄탄한 수학적 기반 위에 파이썬, 넘파이,  판다스, SQL, 데이터 시각화 등 실제 분석 실무에 필요한 도구들을 함께 다룹니다. 많은 이들이 데이터 사이언스를 쉽게 접근하려하지만 깊이 없는 분석 역량은 결국 실전에서 한계를 드러냅니다. 얕은 기술보다 중요한 것은 본질을 꿰뚫는 통계적 사고력과 직관입니다. 실력으로 경쟁하고 싶은, 진짜 데이터 과학자로 성장하고자 하는 분들을 위한 과정입니다.",
+    gradientClasses: "bg-linear-to-tr/oklch from-yellow-200 to-transparent",
+    borderClasses: "md:border-r md:border-t",
+  },
+  {
+    icon: "lightbulb",
+    heading: "진로 설계 & 교육 멘토링",
+    description:
+      "살아 있는 직업 이야기. 학생들은 종종, 학교라는 한정된 환경 속에서 주변 어른들의 말이나 언론에서 본 정보만으로 미래 직업을 결정하곤 합니다. 하지만 진짜 현실은 그렇게 단순하지 않습니다. 이 강의는 소픝웨어, 데이터, 인공지능 등 IT 관련 분야로 진로를 꿈꾸는 학생들에게 실제로 그 길을 걸어온 사람만이 해줄 수 있는 생생한 이야기를 전합니다. 그 직업을 갖기 위해 어떤 준비가 필요한지, 막상 되고 나면 어떤 점이 좋고, 어떤 점이 힘든지 있는 그대로의 현실을 보여줍니다. 그 과정속에 학생들은 스스로의 적성과 방향에 대해 더 깊이 고민하게 되고, 단지 직업이 아니라 나에게 맞는 길을 찾게 됩니다.",
+    gradientClasses: "bg-linear-to-tl/oklch from-yellow-200 to-transparent",
+    borderClasses: "md:border-l md:border-t",
+  },
+];
+
 ---
 
 <BaseLayout>
@@ -100,6 +118,24 @@ const partnerLogos = [
           </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 교육 섹션: 4영역 점선 그리드 -->
+  <section class="mx-auto max-w-[85rem] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 border-slate-400 border-dashed">
+      {educationFeatures.map((feature, index) => (
+        <div class={`group relative flex flex-col justify-start border-dashed border-slate-400 p-10 ${feature.borderClasses}`}>
+          <div class={`absolute inset-0 h-full w-full opacity-0 group-hover:opacity-100 transition duration-300 ${feature.gradientClasses}`} />
+          <div class="relative z-10 mb-4">
+            <svg class="h-8 w-8 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <Icon name={feature.icon} />
+            </svg>
+          </div>
+          <h3 class="relative z-10 mb-2 text-xl font-semibold text-slate-800 group-hover:translate-x-1 transition">{feature.heading}</h3>
+          <p class="relative z-10 text-sm text-slate-700">{feature.description}</p>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -122,4 +158,6 @@ const partnerLogos = [
       ))}
     </div>
   </section>
+
+
 </BaseLayout>
